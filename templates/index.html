@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automata Theory | Group 1</title>
+    <link rel="stylesheet" href="/static/css/styles.css""
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Major+Mono+Display&family=Nunito&family=Poppins:wght@300&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <!--<script src="https://kit.fontawesome.com/f3264ef0a8.js" crossorigin="anonymous"></script>-->
+</head>
+<body>
+   
+    <div class="jumbotron">
+        <object data="/static/images/code-solid.svg" width="50" height="50" ></object>
+    
+        <h1 class="display-4">Hello, World!</h1>  
+        <div class="footer-flex">
+            <div class="p-1"> A. Monzon </div>
+            <div class="p-1"> R. Mashava </div>
+            <div class="p-1"> B. Luis </div>
+            <div class="p-1"> C. Collado </div>
+            <div class="p-1"> C. Sunga </div>
+        </div>
+        <p class="lead">This application checks whether a string is valid or not for the given regular expressions below. Choose one to proceed.</p>
+        
+        <div class="box">
+            <div class="box-1">
+               <strong><a href="{{url_for('regex_one')}}">(a + b) (a + b)* (aa + bb) (ab + ba) (a + b)* (aba + baa)</a></strong>
+            </div>
+            
+            <div class="box-2 ">
+                <strong><a href="{{url_for('regex_two')}}">(11 + 00) (1 + 0)* (101 + 111 + 01) (00* + 11*) (1 + 0 + 11)</a></strong>
+            </div>
+        </div>
+
+        <div class="learn-more">
+        <p class="lead2">
+                <a class="btn btn-primary btn-lg" href="{{url_for('learn_more')}}" role="button">Learn More</a>
+              </p>
+
+        <p class="lead2"> | </p>
+        <p class="lead2">
+                <a class="btn btn-primary btn-lg" href="https://docs.google.com/document/d/1h3KseSDwpItyO_8_id_jZAVEBUIWvkD_tIL-9r_ILU4/edit?usp=sharing" target="_blank" role="button">Documentation</a>
+        </p>
+
+        </div>
+        <footer>
+            <a href="https://github.com/bereniceluis/automata-regex" target="_blank"><img src="/static/images/github-brands.svg" width="20" height="20" alt="">   </a>
+            <a href="https://colab.research.google.com/drive/1USYlW6OgnhBm5X0XRLha_TrrIATLoo2H?usp=sharing#scrollTo=R08tjrn1s6Gz" target="_blank"><img src="/static/images/google-colab.svg" width="20" height="20" alt=""></a>  
+        </footer>
+
+        
+
+    
+    
+
+        
+      </div>
+
+</body>
+</html>

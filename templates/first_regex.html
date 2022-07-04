@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automata Theory | Group 1</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Major+Mono+Display&family=Nunito&family=Poppins:wght@300&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="jumbotron">
+        <!-- IMAGE-->
+        <a href="{{url_for('index')}}"><object data="/static/images/keyboard-solid.svg" width="50" height="50"></object></a>
+
+
+        <h1 class="display-4" >Input Strings</h1>
+        <p class="lead">Enter atleast minimum of 8 characters below with an alphabet of <strong>a</strong> and <strong>b</strong> only. Otherwise you'll encounter an error.</p>
+        
+        <!-- REGULAR EXPRESSION -->
+        <div class="box-1">
+            <strong><a>(a + b) (a + b)* (aa + bb) (ab + ba) (a + b)* (aba + baa)</a></strong>
+         </div>
+        
+         <br>
+
+        <!-- INPUT STRINGS-->
+        <form class="form-flex" method="POST" action="{{url_for('regex_one')}}">
+            <input class="strings" type="text" name="q1_string_input" placeholder="Input String"> 
+            <button type="submit" name="submit" value="submit" id="submit" class="btn btn-outline-dark">Submit</button>
+        </form>
+        
+        {% if string_error %}
+        <div class="check-strings">
+            <p>{{string_error}}</p>
+        </div>
+
+        {% elif error_alphabet %}
+        <div class="check-strings">
+            <p>{{error_alphabet}}</p>
+        </div>
+
+        {% elif valid_strings %}
+        <div class="check-strings">
+            <!--<p>{{valid_strings}}</p>-->
+            <p>{{string_validator}}</p>
+        </div>
+
+        {% elif error_strings %}
+        <div class="check-strings">
+            <!--<p>{{error_strings}}</p>-->
+            <p>{{error_validator}}</p>
+        </div>
+
+        {% else %}
+        <div class="string_display">
+            <p>< The result will be displayed here ></p>
+        </div>
+
+        {% endif %}
+
+       
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{{url_for('index')}}" role="button">Back</a>
+          </p>
+          
+      </div>
+</body>
+</html>

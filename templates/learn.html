@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automata Theory | Group 1</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Major+Mono+Display&family=Nunito&family=Poppins:wght@300&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="jumbotron-1">
+        <a href="{{url_for('index')}}"><object data="/static/images/code-solid.svg" width="50" height="50"></object></a>
+        <h1 class="display-4">Regular Expression</h1>
+        <p class="lead-1"><strong>Regular Expressions</strong> are used to generate patterns of strings. A regular expression is an <strong>algebraic formula</strong> whose value is a pattern consisting of a set of strings, called the language of the expression.
+        </p>
+        <p style="text-align: justify;">
+        Operands in a regular expression can be:
+        <ul style="text-align: justify;">
+            <li><strong><em>characters</em></strong> - from the alphabet over which the regular expression is defined.</li>
+            <li><strong><em>variables</em></strong>  - whose values are any pattern defined by a regular expression.</li>
+            <li><strong><em>epsilon</em></strong>  - whose values are any pattern defined by a regular expression.</li>
+            <li><strong><em>null</em></strong>  - which denotes the empty set of strings.</li>
+        </ul>  
+        </p>
+        <hr>
+
+        <div>
+            <strong><p>Examples</p></strong>
+            <p style="text-align: justify;">1. The set of strings over {0,1} that end in 3 consecutive 1's.
+                    <p style="font-family: 'Roboto Mono', mono space;">(0 | 1)* 111</p>
+            </p>
+            <p style="text-align: justify;">2. The set of strings over {0,1} that have at least one 1.
+                <p style="font-family: 'Roboto Mono', mono space;">0* 1 (0 | 1)*</p>
+            </p>
+          <p style="text-align: justify;">3. The set of strings over {0,1} that have at most one 1.
+            <p style="font-family: 'Roboto Mono', mono space;">0* | 0* 1 0*</p>
+        </p>
+
+        </div>
+
+        
+
+        <p><a href="https://www.cs.rochester.edu/u/nelson/courses/csc_173/fa/re.html" target="_blank">[Source]</a></p>
+
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{{url_for('index')}}" role="button">Back to Home</a>
+          </p>
+      </div>
+
+     
+</body>
+</html>
