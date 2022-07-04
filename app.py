@@ -2,7 +2,6 @@ from flask import Flask, render_template, url_for, request, redirect
 
 # app instance
 app = Flask(__name__)
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -10,6 +9,8 @@ def index():
 @app.route('/learn')
 def learn_more():
     return render_template('learn.html')
+
+# FOR FIRST REGULAR EXPRESSION
 
 @app.route('/firstregex', methods=["POST", "GET"])
 def regex_one():
@@ -67,13 +68,15 @@ def regex_one():
     return render_template('first_regex.html', valid_strings=valid_strings, error_strings=error_strings, string_validator=string_validator, error_validator=error_validator)
 
 
+# FOR SECOND REGULAR EXPRESSION
+
 @app.route('/secondregex', methods=["POST", "GET"])
 def regex_two():
     
-    valid = []
-    error = []
-    string_valid = "String is Valid."
-    error_valid = "String is Not Valid."
+    valid_strings = []
+    error_strings = []
+    string_validator = "String is Valid."
+    error_validator = "String is Not Valid."
 
     if request.method == "POST":
 
@@ -87,44 +90,62 @@ def regex_two():
                 error_alphabet = "Please only input 0 or 1."
                 return render_template('sec_regex.html', error_alphabet=error_alphabet)
 
+        # condition to check for minimum valid string length
         if s2_string_length >= 5: 
 
+            # checking if last non-asterisk condition (1 + 0 + 11) is met
+            # condition to check if the last single character is valid (1 + 0)
             if q2_string_input[-1] == "0" or q2_string_input[-1] == "1":
+                
                 check_valid_4 = "(1 + 0 + 11) Valid"
-                valid.append(check_valid_4)
+                valid_strings.append(check_valid_4)
 
+                # condition to check if the last two characters are valid (11)
                 if q2_string_input[-2:] == "11":
-                    q2_breakdown = q2_string_input[:-2]
 
+                    # remove the  2 valid characters of the strings for last condition
+                    q2_breakdown = q2_string_input[:-2]
+                
+                # remove the valid character of the strings for last condition
                 else:
                     q2_breakdown = q2_string_input[:-1]
-
+                
+                    # check if first non-asterisk condition (11 + 00) is met
                 if q2_breakdown[:2] == "00" or q2_breakdown[:2] == "11":
-                    q2_breakdown = q2_breakdown[2:]
-                    check_valid = "(aba + baa): Valid"
-                    valid.append(check_valid)
 
+                    # remove the valid characters of the strings for first condition
+                    q2_breakdown = q2_breakdown[2:]
+                    check_valid = "(11 + 00): Valid"
+                    valid_strings.append(check_valid)
+
+                    # check if remaining non-asterisk condition (101 + 111 + 01) is met
                     if "101" in q2_breakdown or "111" in q2_breakdown or "01" in q2_breakdown:
-                        check_valid_1 = "(aba + baa): Valid"
-                        valid.append(check_valid_1)
-                    
-                    else:
-                        error_message = 'Invalid string for: (101 + 111 + 01)'
-                        error.append(error_message)
-                            
-                else:
-                    error_message_2 = 'Invalid string for: (11 + 00)'
-                    error.append(error_message_2)
+                        check_valid_1 = "(101 + 111 + 01): Valid"
+                        valid_strings.append(check_valid_1)
+                        return render_template('sec_regex.html', valid_strings=valid_strings, string_validator=string_validator)
                         
+                    else:
+                        error_validator = "String is Not Valid."
+                        error_message = 'Invalid string for: (101 + 111 + 01)'
+                        error_strings.append(error_message)
+                        return render_template('sec_regex.html',error_strings=error_strings, error_validator=error_validator) 
+                                
+                else:
+                    error_validator = "String is Not Valid."
+                    error_message_2 = 'Invalid string for: (11 + 00)'
+                    error_strings.append(error_message_2)
+                    return render_template('sec_regex.html',error_strings=error_strings, error_validator=error_validator)            
             else:
+                error_validator = "String is Not Valid."
                 error_message_3 = 'Invalid string for: (1 + 0 + 11)'
-                error.append(error_message_3)
-                    
+                error_strings.append(error_message_3)
+                return render_template('sec_regex.html',error_strings=error_strings, error_validator=error_validator)
+                        
         else:
             string_error = 'Invalid: Please Input equal or more than 5 characters.'
             return render_template('sec_regex.html', string_error=string_error)
-                
-    return render_template('sec_regex.html', valid_strings=valid, error_strings=error, string_validator=string_valid, error_validator=error_valid)    
+                    
+    return render_template('sec_regex.html', valid_strings=valid_strings, error_strings=error_strings, string_validator=string_validator, error_validator=error_validator)    
 
 
 if __name__ == "__main__":
