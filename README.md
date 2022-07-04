@@ -1,7 +1,7 @@
 # comregex 
 
 A website application by Group 1. It checks whether a string is valid or not for the following regular expressions: 
-- (a + b) (a + b)* (aa + bb) (ab + ba) (a + b)* (aba + baa) and 
+- (a + b) (a + b)* (aa + bb) (ab + ba) (a + b)* (aba + baa)
 - (11 + 00) (1 + 0)* (101 + 111 + 01) (00* + 11*) (1 + 0 + 11)
 
 ## Screenshots
@@ -19,3 +19,4 @@ A website application by Group 1. It checks whether a string is valid or not for
 
 **First Regular Expression**
 ![image](https://cdn.discordapp.com/attachments/983766141128290315/993513745160605737/unknown.png)
+
