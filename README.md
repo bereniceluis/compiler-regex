@@ -1,2 +1,2 @@
-# Group 1 Compiler
+# Group 1 - Compiler
 
