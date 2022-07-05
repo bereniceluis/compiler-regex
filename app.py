@@ -55,12 +55,15 @@ def regex_one():
                         error_message = 'Invalid string for: (aa + bb) (ab + ba)'
                         #string_validator = "String is Valid."
                         error_strings.append(error_message)
+                        return render_template('first_regex.html', error_strings=error_strings, error_validator=error_validator)
                 else:
                     error_message_1 = 'Invalid string for: (a + b)'
-                    error_strings.append(error_message_1)  
+                    error_strings.append(error_message_1)
+                    return render_template('first_regex.html', error_strings=error_strings, error_validator=error_validator)
             else:
                 error_message_2 = 'Invalid string for: (aba + baa)'
-                error_strings.append(error_message_2) 
+                error_strings.append(error_message_2)
+                return render_template('first_regex.html', error_strings=error_strings, error_validator=error_validator)
         else:  
              string_error ='Invalid: Please Input equal or more than 8 characters.'
              return render_template('first_regex.html', string_error=string_error)
