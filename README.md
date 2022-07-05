@@ -17,6 +17,14 @@ A website application by Group 1. It checks whether a string is valid or not for
 ![image](https://cdn.discordapp.com/attachments/983766141128290315/993513513827962991/unknown.png)
 
 
-**First Regular Expression**
+**Second Regular Expression**
+
+
 ![image](https://cdn.discordapp.com/attachments/983766141128290315/993513745160605737/unknown.png)
+
+
+**Learn More**
+
+
+![image](https://cdn.discordapp.com/attachments/983766141128290315/993531671745925120/unknown.png)
 
