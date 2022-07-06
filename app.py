@@ -10,6 +10,7 @@ def index():
 def learn_more():
     return render_template('learn.html')
 
+
 # FOR FIRST REGULAR EXPRESSION
 
 @app.route('/firstregex', methods=["POST", "GET"])
