@@ -8,7 +8,7 @@ A website application by Group 1. It checks whether a string is valid or not for
 **Home Page**
 
 
-![image](https://cdn.discordapp.com/attachments/983766141128290315/993511117416583188/unknown.png)
+![image](https://cdn.discordapp.com/attachments/983766141128290315/994070116067188777/unknown.png)
 
 
 **First Regular Expression**
